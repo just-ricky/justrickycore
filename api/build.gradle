@@ -1,0 +1,24 @@
+plugins {
+    id "java"
+    id "com.github.johnrengelman.shadow"
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT"
+}
+
+shadowJar {
+    archiveBaseName.set("justrickycore-api-${project.version}")
+    archiveClassifier.set("")
+    archiveVersion.set("")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileJava {
+    options.compilerArgs += ["-parameters"]
+    options.fork = true
+    options.forkOptions.executable = "javac"
+}

@@ -1,0 +1,31 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id "java"
+    id "com.github.johnrengelman.shadow"
+}
+
+dependencies {
+    implementation project(path: ":justrickycore-api", configuration: "shadow")
+
+    compileOnly "io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT"
+}
+
+shadowJar {
+    archiveBaseName.set("${project.ext.name}-${project.version}")
+    archiveClassifier.set("")
+    archiveVersion.set("")
+}
+
+
+// replace version information in src/main/resources
+processResources {
+    filter(ReplaceTokens, tokens: [version: version])
+    filter(ReplaceTokens, tokens: [name: project.ext.name])
+}
+
+compileJava {
+    options.compilerArgs += ["-parameters"]
+    options.fork = true
+    options.forkOptions.executable = "javac"
+}

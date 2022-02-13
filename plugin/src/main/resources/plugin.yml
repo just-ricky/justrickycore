@@ -1,0 +1,7 @@
+main: com.github.just_ricky.justrickycore.JustRickyCorePlugin
+name: @name@
+version: @version@
+description: Just Ricky core plugin
+authors:
+  - yakovliam
+website: https://github.com/just-ricky/

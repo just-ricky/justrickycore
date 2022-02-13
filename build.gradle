@@ -1,0 +1,17 @@
+plugins {
+    id "java"
+}
+
+subprojects {
+
+    group "com.github.just_ricky"
+    version "1.0.0-SNAPSHOT"
+    project.ext.name = "JustRickyCore"
+    project.ext.groupId = "com.github.just_ricky.justrickycore"
+
+    repositories {
+        mavenCentral()
+
+        maven { url = "https://papermc.io/repo/repository/maven-public/" }
+    }
+}
