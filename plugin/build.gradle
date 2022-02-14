@@ -5,16 +5,27 @@ plugins {
     id "com.github.johnrengelman.shadow"
 }
 
+repositories {
+    maven { url = "https://repo.aikar.co/content/groups/aikar/" }
+}
+
 dependencies {
     implementation project(path: ":justrickycore-api", configuration: "shadow")
 
     compileOnly "io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT"
+    implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
+
+    compileOnly "me.mattstudios:triumph-msg-adventure:2.2.4-SNAPSHOT"
+    compileOnly "me.mattstudios:triumph-msg:2.2.4-SNAPSHOT"
 }
 
 shadowJar {
     archiveBaseName.set("${project.ext.name}-${project.version}")
     archiveClassifier.set("")
     archiveVersion.set("")
+
+    relocate "co.aikar.commands", "${project.ext.groupId}.libs.acf"
+    relocate "co.aikar.locales", "${project.ext.groupId}.libs.locales"
 }
 
 
