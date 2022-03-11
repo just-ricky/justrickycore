@@ -5,26 +5,22 @@ import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Single;
 import com.github.just_ricky.justrickycore.JustRickyCorePlugin;
-import com.github.just_ricky.justrickycore.api.message.Message;
-import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;
 
-import java.util.concurrent.TimeUnit;
-
-@CommandAlias("sync")
-public class SyncCommand extends BaseCommand {
+@CommandAlias("panelsync")
+public class PanelSyncCommand extends BaseCommand {
 
     /**
      * Plugin
      */
     private final JustRickyCorePlugin plugin;
 
-    public SyncCommand(JustRickyCorePlugin plugin) {
+    public PanelSyncCommand(JustRickyCorePlugin plugin) {
         this.plugin = plugin;
     }
 
     @Default
-    public void onSync(Player player, @Single String code) {
+    public void onPanelSync(Player player, @Single String code) {
         // send initial sync message
         plugin.getMessages().syncSyncing.message(player);
 

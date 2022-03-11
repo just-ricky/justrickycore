@@ -54,7 +54,7 @@ public class QueryParamMutator {
         }
 
         // remove last "&"
-        url = url.substring(0, url.length() - 2);
+        url = url.substring(0, url.length() - 1);
 
         return url;
     }

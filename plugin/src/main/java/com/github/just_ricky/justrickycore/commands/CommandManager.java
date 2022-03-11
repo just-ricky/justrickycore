@@ -20,6 +20,6 @@ public class CommandManager {
 
         // register commands
         this.commandManager.registerCommand(new CoreCommand(plugin));
-        this.commandManager.registerCommand(new SyncCommand(plugin));
+        this.commandManager.registerCommand(new PanelSyncCommand(plugin));
     }
 }
