@@ -12,7 +12,7 @@ repositories {
 dependencies {
     implementation project(path: ":justrickycore-api", configuration: "shadow")
 
-    compileOnly "io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT"
+    compileOnly "io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT"
     implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
 
     compileOnly "me.mattstudios:triumph-msg-adventure:2.2.4-SNAPSHOT"
